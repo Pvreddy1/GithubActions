@@ -1,0 +1,15 @@
+name: Test NGINX Action
+ 
+on:
+  push:
+    branches: [ "main" ]
+ 
+jobs:
+  run-nginx:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+ 
+      - name: Run Custom NGINX Action
+        uses: ./  # This uses the action.yml in the repo root

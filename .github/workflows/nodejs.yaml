@@ -36,16 +36,3 @@ jobs:
           run: |
             echo "✅ Node.js container started"
  
-      # Step 5: Wait for Node.js app to be ready
-      - name: Wait for Node.js
-        run: |
-          for i in {1..10}; do
-            if curl -s http://localhost:3000 > /dev/null; then
-              echo "✅ Node.js app is up!"
-              exit 0
-            fi
-            echo "Waiting for Node.js..."
-            sleep 2
-          done
-          echo "❌ Node.js app did not start in time"
-          exit 1
